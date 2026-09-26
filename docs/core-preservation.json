@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "unchanged_core_sha256": {
+    "aki_core.py": "bb7a3abab557546c51a5ae8f89b424adff6873ce2df46cfe2b94b7ecd11d5222",
+    "paired_resampling.py": "fcd20c5484fad9423685e18b4c6e9429afd3092bc9137cc0eae2412164c21c1f",
+    "analysis_adapter.py": "d436de200d5002d64703df6145ec865699afc6bcd50ffa9b353f5001dde5e075",
+    "paired_resampling_exact.py": "270f44aa5512559b57c187a9ef1b77d3895e7c41f225734c4d054a567a0c30f8",
+    "extension_core.py": "20a12f0fc82b2d18f9aad94b2dbaf78c58da7a1e4221c114c94e52de7b55943d"
+  },
+  "cohort_function_AST_unchanged": {
+    "dump": true,
+    "sha": true,
+    "parse_dates": true,
+    "distribution": true,
+    "build_mover": true,
+    "build_vital": true,
+    "run_dataset": true
+  },
+  "patient_data_included": false
+}

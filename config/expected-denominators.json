@@ -1,0 +1,22 @@
+{
+  "mover": {
+    "main": 4321,
+    "parallel7": 4433,
+    "S1_no_diagnosis": 4357,
+    "S2_target_after5min": 4318,
+    "S3_exclude_extremes": 4321,
+    "S4_exclude_over24h": 4321,
+    "S5_exclude_conflicts": 4309,
+    "S6_all_postop_E48": 4079
+  },
+  "vitaldb": {
+    "main": 2059,
+    "parallel7": 2540,
+    "S1_no_diagnosis": 2063,
+    "S2_target_after5min": 2049,
+    "S3_exclude_extremes": 2058,
+    "S4_exclude_over24h": 2058,
+    "S5_exclude_conflicts": 2059,
+    "S6_all_postop_E48": 1124
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "status": "design_only_no_patient_outcomes_computed",
+  "centers": [
+    "mover",
+    "vitaldb"
+  ],
+  "analysis_order": [
+    "main",
+    "parallel7",
+    "S1_no_diagnosis",
+    "S2_target_after5min",
+    "S3_exclude_extremes",
+    "S4_exclude_over24h",
+    "S5_exclude_conflicts",
+    "S6_all_postop_E48"
+  ],
+  "main_n": {
+    "mover": 4321,
+    "vitaldb": 2059
+  },
+  "parallel7_n": {
+    "mover": 4433,
+    "vitaldb": 2540
+  },
+  "reference_window": {
+    "left": "anestart-604800 inclusive",
+    "right": "min(aneend+604800,discharge) inclusive"
+  },
+  "baseline_coverage": "at least one measurement [anestart-604800,anestart)",
+  "postop_window": "(aneend,min(aneend+604800,discharge)]",
+  "primary_points": "postop with a strictly earlier measurement in [t-172800,t)",
+  "primary_rule": "current-min48>=0.3 OR 2*current>=3*min7",
+  "parallel_rule": "2*current>=3*min7 at E7",
+  "values": {
+    "raw_only_filter": "finite and 0<SCr<100 mg/dL",
+    "duplicates": "same patient/time/value collapsed",
+    "conflicts": "entire original timestamp excluded",
+    "parse": "raw string to Decimal/Fraction or exact integer cents",
+    "transform_reselection": false
+  },
+  "reference_weights": "each deduplicated in-window measurement equal; patient multiplicity in bootstrap",
+  "primary_comparison": "I_vs_B",
+  "versions": [
+    "I",
+    "T",
+    "B",
+    "G_lower_bounded_0p2"
+  ],
+  "quantile": "type1",
+  "tail_probabilities": [
+    0.025,
+    0.975
+  ],
+  "midrank": "original less + half equal",
+  "grid_probabilities": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "ties": "lower grid probability",
+  "resampling": {
+    "repetitions": 5000,
+    "seed": 20260921,
+    "bit_generator": "PCG64",
+    "hierarchy": "SeedSequence(seed).spawn(2) in center order; each child.spawn(8) in analysis_order",
+    "sampling_unit": "whole patient with multiplicity",
+    "reestimate_mapping": true,
+    "interval": "empirical type1 2.5/97.5 percentiles; stability interval, no coverage guarantee",
+    "zero_degenerate": "report flag; no equivalence/no-zero-population-risk claim"
+  },
+  "patient_order": "case_id string lexicographic",
+  "optional_not_in_version": [
+    "patient-equal quantiles",
+    "SCr staging",
+    "MAP association",
+    "predictive models",
+    "pooled centers",
+    "p values",
+    "binomial CIs for adaptive maps"
+  ]
+}

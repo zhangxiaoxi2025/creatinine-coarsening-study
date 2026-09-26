@@ -1,0 +1,12 @@
+step,criterion,mover_remaining,vitaldb_remaining,mover_excluded,vitaldb_excluded,branch
+-1,Unique released operation cases,64354,6388,,,entry
+0,Nonconflicting identity cases,64346,6388,8,0,sequential_E48
+1,One operation in complete source,27651,5853,36695,535,sequential_E48
+2,Adult and general anesthesia,23691,5520,3960,333,sequential_E48
+3,Valid anesthesia times,23518,5519,173,1,sequential_E48
+4,Valid admission/discharge ordering,23484,5504,34,15,sequential_E48
+5,Eligible noncardiac procedure mapping,22411,5385,1073,119,sequential_E48
+6,No recorded renal-status screen exclusion,22350,5378,61,7,sequential_E48
+7,Preoperative and postoperative laboratory coverage,4441,2542,17909,2836,sequential_E48
+8,At least one E48 target,4321,2059,120,483,sequential_E48
+9,Parallel E7 eligibility from pre/post coverage,4433,2540,8,2,parallel_E7

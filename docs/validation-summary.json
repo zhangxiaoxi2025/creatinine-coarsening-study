@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_ONLY; no real patient/source data opened during packaging",
+  "public_release": "v1.0.0",
+  "unit_tests": {
+    "scope": "SYNTHETIC_ONLY",
+    "tests_run": 151,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "status": "PASS"
+  },
+  "standalone_demo": {
+    "synthetic_only": true,
+    "formal_resamples_per_mode": 20,
+    "centers": 2,
+    "analyses_per_center": 8,
+    "status": "SYNTHETIC_END_TO_END_PASS",
+    "synthetic_expected_denominators": {
+      "main": 10,
+      "parallel7": 11,
+      "S1_no_diagnosis": 11,
+      "S2_target_after5min": 10,
+      "S3_exclude_extremes": 9,
+      "S4_exclude_over24h": 9,
+      "S5_exclude_conflicts": 9,
+      "S6_all_postop_E48": 9
+    }
+  },
+  "preserved_core_files": 5,
+  "cohort_functions_AST_unchanged": {
+    "dump": true,
+    "sha": true,
+    "parse_dates": true,
+    "distribution": true,
+    "build_mover": true,
+    "build_vital": true,
+    "run_dataset": true
+  },
+  "original_test_functions_and_classes_AST_unchanged": {
+    "test_aki_core.py": {
+      "functions_and_classes": 5,
+      "scientific_AST_equal": true
+    },
+    "test_paired_resampling.py": {
+      "functions_and_classes": 6,
+      "scientific_AST_equal": true
+    },
+    "test_independent_oracle.py": {
+      "functions_and_classes": 6,
+      "scientific_AST_equal": true
+    },
+    "test_resampling_final_review.py": {
+      "functions_and_classes": 2,
+      "scientific_AST_equal": true
+    },
+    "test_analysis_adapter.py": {
+      "functions_and_classes": 4,
+      "scientific_AST_equal": true
+    },
+    "test_paired_resampling_exact.py": {
+      "functions_and_classes": 9,
+      "scientific_AST_equal": true
+    },
+    "test_extension_core.py": {
+      "functions_and_classes": 5,
+      "scientific_AST_equal": true
+    }
+  },
+  "portable_integration_tests": "Two complete synthetic two-center pipelines with five resamples per mode; repeated numerical outputs and RNG states identical; expected denominators; E1/E2 folding; private permissions; unit filter; headers; archive member checks; source-checksum mismatch; optimized-Python rejection.",
+  "formal_run_settings": "2 centers x 8 analyses x 5000 resamples, SeedSequence(20260921) with center then analysis PCG64 hierarchy; unit_scale=10^15",
+  "limits": [
+    "Portable source I/O and orchestration were tested only on synthetic source-format data.",
+    "The full real-data portable pipeline was not rerun.",
+    "End-to-end numeric checks establish repeatability and internal identities; they are not an independent expected-results oracle for every generated statistic.",
+    "The original controlled study execution and exploratory execution have separate independent-verification evidence.",
+    "Figure rebuilding and final publication manifests are integrated and verified separately."
+  ]
+}
