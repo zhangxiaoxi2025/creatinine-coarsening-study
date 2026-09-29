@@ -1,8 +1,16 @@
 # Change history
 
+## 1.0.1 — Documentation and figure-label revision prepared 2026-09-29
+
+Clarified empirical resampling-range terminology, dataset-specific rule application, measurement weighting and the boundary between separately implemented computational checks and independent human reanalysis. Added visibly sanitized historical plan/amendment/extension copies with separate original and edited hashes and limited internal freeze/lock summaries. Only two explanatory strings in the plotting script changed to match the revised manuscript’s range terminology. Statistical execution code, numerical plotting instructions, frozen JSON specification, configuration, aggregate numerical results and patient analyses did not change. No patient data were opened and no real-data pipeline was rerun. Original v1.0.0 source and validation records remain historical inputs. The software version 1.0.1 here is distinct from the numerical implementation amendment 1.0.1 recorded on 2026-09-23. This local preparation date is not a public-release date.
+
+## 1.0.0 public release — 2026-09-26
+
+The first public software release was published after the main analysis. It included the historical JSON specification and methods/change history, but not the original internal plan, freeze manifest or exploratory lock record. The study was not publicly preregistered. Later sharing of sanitized protocol history does not change that status.
+
 ## 1.0.0 — 2026-09-25, portable code package
 
-Added explicit local source/output CLI, MOVER archive member ingestion, VitalDB CSV validation, portable output handling, synthetic source fixtures, end-to-end tests, documentation, and terminology-only algorithm configurations. No real patient file was read or rerun while building this package. Five numerical/adapter files remain byte-identical to the analyzed implementations; cohort construction scientific functions retain their original ASTs. Source parsing/orchestration changes are synthetic-tested portability changes, not a newly independently verified real-data execution.
+Added explicit local source/output CLI, MOVER archive member ingestion, VitalDB CSV validation, portable output handling, synthetic source fixtures, end-to-end tests, documentation, and terminology-only algorithm configurations. No real patient file was read or rerun while building this package. Five numerical/adapter files remain byte-identical to the analyzed implementations; cohort construction scientific functions retain their original ASTs. Source parsing/orchestration changes are synthetic-tested portability changes, not a second human analyst’s independently verified real-data execution.
 
 ## Exploratory supplement — 2026-09-24
 

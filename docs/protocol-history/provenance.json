@@ -1,0 +1,93 @@
+{
+  "prepared_date": "2026-09-29",
+  "publication_status": "Distributed with software v1.0.1; see the release record for the actual publication timestamp",
+  "hash_semantics": "source_sha256 identifies the original local document; public_sha256 identifies the edited copy or summary. They are not interchangeable, and neither establishes third-party timestamping.",
+  "documents": [
+    {
+      "source_document": "analysis-plan-v1.0.md",
+      "source_sha256": "846b7c55a8ea86055853a99261a5f2bc23332b76ffc3f61e8e78200a90b7e8b3",
+      "source_bytes": 12488,
+      "public_file": "analysis-plan-v1.0.sanitized.zh.md",
+      "public_sha256": "35c97d23cb90e5fe1016e26caff77e3240e125e190804ebbe8e864885f828fbb",
+      "public_bytes": 12398,
+      "copy_type": "sanitized copy",
+      "edits": [
+        "Removed four administrative/access/path bullet or paragraph entries",
+        "Generalized local authorization wording concerning preoperative AKI screening",
+        "Clarified that proxy review was AI-assisted computational review",
+        "Removed obsolete author-declaration workflow sentence",
+        "Added visible editorial header; preserved original scientific rules and historical interval wording"
+      ]
+    },
+    {
+      "source_document": "analysis-implementation-amendment-v1.0.1.md",
+      "source_sha256": "8ff0a41f63630ed08bc9fd5bef5af5c2f7a1b0d8b5eca58cc2b17f808e9a3d51",
+      "source_bytes": 2916,
+      "public_file": "exact-implementation-amendment-20260923.sanitized.md",
+      "public_sha256": "defb09eaba941e16b92ee7a53943bc783a6e249bb0f4f667d524d92ee548fee6",
+      "public_bytes": 3141,
+      "copy_type": "sanitized copy",
+      "edits": [
+        "Removed local approval and recovery-budget accounting",
+        "Removed an internal workspace alias from a code filename",
+        "Clarified separately implemented computational checking",
+        "Added visible editorial header"
+      ]
+    },
+    {
+      "source_document": "extension-protocol-v1.0.md",
+      "source_sha256": "70c9ef5a1e79b7b947d710314a9fef243e9d5eadcad3ec5e16dde88819a9e108",
+      "source_bytes": 5158,
+      "public_file": "extension-protocol-v1.0.sanitized.md",
+      "public_sha256": "8b891f4143c2b83b6ddb075368a8919f6c61f185a4c025d4643907f664eb2cd4",
+      "public_bytes": 5773,
+      "copy_type": "sanitized copy",
+      "edits": [
+        "Generalized data-access workflow to source/version/permitted-use verification",
+        "Removed local recovery-budget instructions and obsolete publication/author-declaration workflow sentence",
+        "Clarified separately implemented computational checking",
+        "Added visible editorial header"
+      ]
+    },
+    {
+      "source_document": "freeze-manifest.json",
+      "source_sha256": "e4cb6b47caefd4e44edc2875e36c6340b7d7819d20457c237bc825d6cfb70bdf",
+      "source_bytes": 17675,
+      "public_file": "freeze-record.sanitized-summary.json",
+      "public_sha256": "70d7610c8ca54f6b42913a991b63907566b9e8b6057f0581355fac4f96a3a0f4",
+      "public_bytes": 1162,
+      "copy_type": "sanitized summary",
+      "edits": [
+        "Retained internal freeze timestamp, status and original plan/spec hashes only",
+        "Omitted all other manifest entries and local authority text"
+      ]
+    },
+    {
+      "source_document": "protocol-lock.json",
+      "source_sha256": "137522bb4601e3ebfb80465d351490f7030854559848ef7b197e24296d1d9d3e",
+      "source_bytes": 523,
+      "public_file": "extension-lock.sanitized-summary.json",
+      "public_sha256": "5a661f02e8edb7bfabcd7d53fdbfbb2caf7693fc687b7d53e328309e310feebc",
+      "public_bytes": 757,
+      "copy_type": "sanitized summary",
+      "edits": [
+        "Retained internal timestamp, result-awareness state and protocol hash",
+        "Omitted user-approval and other manifest fingerprints"
+      ]
+    },
+    {
+      "source_document": "analysis-spec-v1.0.json",
+      "source_sha256": "013f3d7d25da4a1fa16bd9e39a77c4554ad282163967e25bb92612ec345f5341",
+      "public_file": "../../analysis-spec-v1.0.json",
+      "public_sha256": "013f3d7d25da4a1fa16bd9e39a77c4554ad282163967e25bb92612ec345f5341",
+      "copy_type": "byte-identical historical specification; unchanged since software v1.0.0"
+    }
+  ],
+  "english_summary": {
+    "file": "analysis-plan-english-summary.md",
+    "sha256": "ca13f8b3d30bf075f6fb88afa9c2a369cf3398ea0bd9ff828e1a73bc5270836e",
+    "prepared_on": "2026-09-29",
+    "prepared_after_results": true,
+    "description": "Retrospective English summary of the screened original Chinese plan, with later amendments explicitly separated."
+  }
+}

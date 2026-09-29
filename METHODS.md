@@ -1,5 +1,11 @@
 # Scientific rules and reproducibility boundary
 
+## Internally frozen design and release chronology
+
+The design was drafted on 2026-09-21 and internally frozen on 2026-09-23 before label and transformation-effect calculations. The study was not publicly preregistered. The original software v1.0.0 was published on 2026-09-26, after the main analysis. Sanitized protocol copies prepared for this documentation revision are in `docs/protocol-history/`; their original dates record local history, not third-party public timestamping.
+
+The same prespecified scientific rules were applied separately in two independent datasets, with mappings fitted within each dataset. No cross-dataset effect-equivalence or replication-success threshold was prespecified.
+
 ## Frozen population
 
 Use one operation per patient in the complete source, adults receiving general anesthesia, valid anesthesia and admission/discharge ordering, and the frozen noncardiac procedure map. Conflicting MOVER operation identities or critical metadata exclude the operation. MOVER laboratory and same-visit diagnosis linkage requires both case and patient identifiers to match. VitalDB case identifiers must be unique. The full procedure vocabulary is retained as algorithm configuration, with counts and source row indices removed.
@@ -18,7 +24,7 @@ All representation versions use the same patient, timestamp, target, and prior-i
 
 Source text is converted using Decimal/Fraction to integer units of 10^-15 mg/dL. The conversion must be exact; values requiring finer precision stop execution. Integer arithmetic and explicit bounds protect threshold calculations. Values are never rounded during input conversion.
 
-Fit the reference distribution directly to all retained global-window observations from the selected population, including preoperative, intraoperative, and eligible/ineligible postoperative records. Original main fitting is measurement-equal, using patient multiplicities during bootstrap. Type-1 inverse-CDF quantiles are used.
+Fit the reference distribution directly to all retained global-window observations from the selected population, including preoperative, intraoperative, and eligible/ineligible postoperative records. Original main fitting is measurement-equal, using patient multiplicities during resampling. This defines the transformation’s reference distribution over retained laboratory records; discordance is evaluated per patient. Patients with more measurements contribute more mass to the fitted distribution and have more observed opportunities to meet the longitudinal criteria. Patient-equal weighting instead defines another reference distribution in which each patient contributes equal total mass. It was examined only in the post-result exploratory extension. Type-1 inverse-CDF quantiles are used. The effect of measurement frequency on the reported discordance was not separately estimated.
 
 - I: original released values.
 - T: clip to Q(0.025) and Q(0.975).
@@ -35,7 +41,7 @@ Run main, parallel7, S1_no_diagnosis, S2_target_after5min, S3_exclude_extremes, 
 
 There are 16 experiments: 2 centers × 8 analyses × 5,000 whole-patient resamples, totaling 80,000 resamples. One SeedSequence(20260921) spawns center streams in MOVER, VitalDB order; each center spawns eight streams in the fixed analysis order, with PCG64 generators. Complete reference and target clusters receive their patient's sampled multiplicity. Four representations share each replicate's patient weights; T/B are refitted in every replicate. Patients are ordered lexicographically by source case-id strings.
 
-Report empirical type-1 2.5th and 97.5th percentile ranges as patient-resampling stability ranges. Population coverage for this discrete fitted-threshold statistic is not established; these are not automatic 95% confidence guarantees or equivalence tests. A zero central range is distinct from every replicate being zero. Distinct D values describe the latter property directly. Fitted map/quantile-combination counts are center-by-analysis diagnostics shared across representation rows; identity and fixed-grid representations are not being refitted. Quantile-combination counts include both tail endpoints plus the 19 interior nodes. Do not sum repeated diagnostics over the four representations.
+Report empirical type-1 2.5th and 97.5th percentile ranges as resampling ranges. Population coverage for this discrete fitted-threshold statistic is not established; these are not automatic 95% confidence guarantees or equivalence tests. A zero central range is distinct from every replicate being zero. Distinct D values describe the latter property directly. Fitted map/quantile-combination counts are center-by-analysis diagnostics shared across representation rows; identity and fixed-grid representations are not being refitted. Quantile-combination counts include both tail endpoints plus the 19 interior nodes. Do not sum repeated diagnostics over the four representations.
 
 ## Post-result exploratory E1–E3
 
@@ -49,6 +55,10 @@ E3 fits one patient-equal alternative: every retained reference record from pati
 
 ## Portable validation
 
-The original study analysis and extension were independently verified in their original controlled execution. Portable packaging preserves five numerical/adapter files byte-for-byte and the scientific cohort functions by AST, while replacing environment-specific access gates, paths, and command-line orchestration. Original synthetic test functions and classes are preserved apart from filesystem lookup/output changes.
+The original study analysis and extension underwent separately implemented computational checks in their original controlled execution. They were performed within the same AI-assisted analytical workflow and do not constitute an independent second-analyst rerun of the complete real-data pipeline. Separate implementations can still share errors in interpreting the scientific rules. Portable packaging preserves five numerical/adapter files byte-for-byte and the scientific cohort functions by AST, while replacing environment-specific access gates, paths, and command-line orchestration. Original synthetic test functions and classes are preserved apart from filesystem lookup/output changes.
 
 The distributed source I/O is tested only on synthetic archives/CSVs: schema and unit filtering, malformed/duplicate member rejection, both full center pipelines, all denominator contracts, repeated-run numerical consistency, E1–E3 folding, private output permissions, and absence of patient identifiers in aggregate outputs. The real source archive has not been loaded in this packaging task. The formal CLI requires the five source files to match `config/source-checksums.json`, which was transcribed from existing verified source-snapshot checksum records. Matching bytes does not establish permission. A new operator must independently verify their access rights and generated results.
+
+## Historical output terminology
+
+Statistical execution scripts, machine-readable keys and the historical specification remain unchanged in this candidate. The plotting script changes only two explanatory text strings; numerical plotting instructions and aggregate inputs are identical. Names containing `interval`, `stability` or `independent` must be interpreted within the reporting and verification boundaries above. They do not establish calibrated confidence coverage or a second human analyst’s complete replication. Neither the main analysis nor the 80,000 resamples were rerun for the documentation revision.

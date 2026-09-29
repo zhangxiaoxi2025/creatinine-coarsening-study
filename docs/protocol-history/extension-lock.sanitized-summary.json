@@ -1,0 +1,14 @@
+{
+  "document_type": "Sanitized summary of the internal exploratory-protocol lock",
+  "prepared_date": "2026-09-29",
+  "public_release_status": "Distributed with software v1.0.1; see the release record for the actual publication timestamp",
+  "locked_at_as_recorded": "2026-09-24T08:26:53.160597+00:00",
+  "original_results_known": true,
+  "before_extension_computation_as_recorded": true,
+  "original_protocol_sha256": "70c9ef5a1e79b7b947d710314a9fef243e9d5eadcad3ec5e16dde88819a9e108",
+  "omissions": [
+    "user-approval fingerprint",
+    "original-analysis and original-design manifest fingerprints"
+  ],
+  "limitation": "The lock is an internal sequence record. The extension remains post-result exploratory; the lock is not public preregistration."
+}

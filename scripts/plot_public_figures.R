@@ -145,7 +145,7 @@ draw_main <- function() {
     txt(sprintf("%d/%d (%.2f%%)",z$n01,z$n,z$upward*100),XP(z$upward*100),yy[2]-5.7,size=7.3)
   }
   txt("Patients with directional change (%)",140.5,7,size=7.6)
-  txt("Lines are 95% patient-resampling stability intervals from 5000 resamples; population coverage is unestablished.",85,1.8,size=7.2)
+  txt("Lines show 2.5th-97.5th percentile ranges from 5000 patient resamples; population coverage is unestablished.",85,1.8,size=7.2)
 }
 states <- c("neither","ratio_only","absolute_only","both")
 state_labels <- c("Neither","Ratio\nonly","Absolute\nonly","Both")
@@ -213,7 +213,7 @@ draw_sensitivity <- function() {
    }
  }
  txt("Patients with changed label (%)",121,10.5,size=7.7)
- txt("Quantile coarsening. Lines show 95% patient-resampling stability intervals. Each analysis refits its mapping.",85,6.2,size=7.2)
+ txt("Quantile coarsening. Lines show resampling ranges. Each analysis refits its mapping.",85,6.2,size=7.2)
  txt("*Parallel E7 changes population, rule and reference pool. S6 does not establish complete seven-day surveillance.",85,2.1,size=7.2)
 }
 # Native Cairo PDF preserves selectable text and embeds fonts. Raster outputs use physical mm dimensions.

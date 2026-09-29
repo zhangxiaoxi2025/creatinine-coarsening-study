@@ -1,0 +1,28 @@
+{
+  "document_type": "Sanitized summary of an internal freeze record",
+  "prepared_date": "2026-09-29",
+  "public_release_status": "Distributed with software v1.0.1; see the release record for the actual publication timestamp",
+  "frozen_at_as_recorded": "2026-09-23T07:50:22.458089+00:00",
+  "status_as_recorded": "FROZEN_DESIGN_ONLY",
+  "patient_outcomes_computed_as_recorded": false,
+  "selected_original_scientific_files": [
+    {
+      "path": "analysis-plan-v1.0.md",
+      "sha256": "846b7c55a8ea86055853a99261a5f2bc23332b76ffc3f61e8e78200a90b7e8b3",
+      "bytes": 12488
+    },
+    {
+      "path": "analysis-spec-v1.0.json",
+      "sha256": "013f3d7d25da4a1fa16bd9e39a77c4554ad282163967e25bb92612ec345f5341",
+      "bytes": 2509
+    }
+  ],
+  "omissions": [
+    "internal authorization text",
+    "machine-specific and private artifact paths",
+    "access receipts",
+    "patient-derived file fingerprints",
+    "unselected administrative and execution records"
+  ],
+  "limitation": "The timestamp is an internal record, not an independently witnessed public preregistration. File hashes establish content identity, not historical public availability."
+}
